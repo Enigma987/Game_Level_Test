@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterMovement : MonoBehaviour
+public class CharacterManager : MonoBehaviour
 {
     public CharacterController2d controller;
     public Animator animator2d;
     public Rigidbody2D rigidbody2d;
 
-    public float horizonatlMove = 0f;
+    public float horizontalMove = 0f;
 
     public float moveSpeed;
 
@@ -23,18 +23,25 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        horizonatlMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
-        animator2d.SetFloat("moveX", horizonatlMove);
+
+        horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
+        animator2d.SetFloat("moveX", horizontalMove);
 
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
         }
+
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            animator2d.SetTrigger("attackTrigger");
+        }
     }
 
     private void FixedUpdate()
     {
-        controller.Move(horizonatlMove * Time.fixedDeltaTime, false, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         jump = false;
     }
 }
