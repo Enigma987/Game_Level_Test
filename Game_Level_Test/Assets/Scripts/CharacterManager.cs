@@ -14,11 +14,14 @@ public class CharacterManager : MonoBehaviour
 
     public bool jump;
 
+    public int coins;
+
     // Start is called before the first frame update
     void Start()
     {
         animator2d = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
+        coins = 0;
     }
 
     private void Update()
@@ -41,7 +44,17 @@ public class CharacterManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
         jump = false;
+    }
+
+    public void UpgradeCoins()
+    {
+        coins++;
+    }
+
+    public int GetNumberOfCoins()
+    {
+        return coins;
     }
 }

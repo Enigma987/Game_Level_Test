@@ -40,10 +40,7 @@ public class MushroomScript : MonoBehaviour
 
 
             if (Mathf.RoundToInt(rigidbody2d.position.x) == Mathf.RoundToInt(points[1].transform.position.x))
-            {
-                Debug.Log("KURWA");
                  walkRight = false;
-            }
 
             if (Mathf.RoundToInt(rigidbody2d.position.x) == Mathf.RoundToInt(points[0].transform.position.x))
                 walkRight = true;
@@ -52,6 +49,6 @@ public class MushroomScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, false);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, false);
     }
 }

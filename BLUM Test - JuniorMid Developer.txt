@@ -8,7 +8,7 @@ Wymagania:
 
 - Dodanie ataku bohatera po wciśnięciu przycisku na klawiaturze <+>
 
-- Dodanie prostego systemu zbierania pieniędzy po wejściu w pieniążek. Informacja o zebranych pieniądzach powinna znajdować się na UI 
+- Dodanie prostego systemu zbierania pieniędzy po wejściu w pieniążek. Informacja o zebranych pieniądzach powinna znajdować się na UI <+>
 
 - Dodanie prostego systemu punktów życia dla gracza. Informacja o posiadanych punktach życia powinna znajdować się na UI (bazowo gracz posiada 3 punkty życia) 
 
@@ -33,7 +33,7 @@ Lista dodatkowych zadań:
 
 - Dodanie nowego typu przeciwnika - Goblina, który potrafi zaatakować gracza, jeśli ten zbliży się na określoną odległość. Podobnie jak grzyb może stać w miejscu albo patrolować w zależności od ustawień w inspektorze. 
 
-- Wykonanie projektu przy użyciu GIT 
+- Wykonanie projektu przy użyciu GIT <+>
 
 - Projekt posiada bardzo dużo możliwości rozwoju, dlatego wszelkie nowatorskie pomysły na urozmaicenie rozgrywki są mile widziane :) 
 
