@@ -19,6 +19,8 @@ public class CharacterController2d : MonoBehaviour
 	private bool facingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
+	public bool airControl;
+
 	private void Awake()
 	{
 		rigidbody2d = GetComponent<Rigidbody2D>();
@@ -40,21 +42,31 @@ public class CharacterController2d : MonoBehaviour
 
 	public void Move(float move, bool jump)
 	{
-		if (isOnGround)
+		//only control the player if grounded or airControl is turned on
+		if (isOnGround || airControl)
 		{
+			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 10f, rigidbody2d.velocity.y);
-
+			// And then smoothing it out and applying it to the character
 			rigidbody2d.velocity = Vector3.SmoothDamp(rigidbody2d.velocity, targetVelocity, ref m_Velocity, movementSmooth);
 
+			// If the input is moving the player right and the player is facing left...
 			if (move > 0 && !facingRight)
+			{
+				// ... flip the player.
 				Flip();
+			}
+			// Otherwise if the input is moving the player left and the player is facing right...
 			else if (move < 0 && facingRight)
+			{
+				// ... flip the player.
 				Flip();
-
+			}
 		}
-
+		// If the player should jump...
 		if (isOnGround && jump)
 		{
+			// Add a vertical force to the player.
 			isOnGround = false;
 			rigidbody2d.AddForce(new Vector2(0f, jumpForce));
 		}

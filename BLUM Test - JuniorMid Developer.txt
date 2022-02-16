@@ -10,7 +10,7 @@ Wymagania:
 
 - Dodanie prostego systemu zbierania pieniędzy po wejściu w pieniążek. Informacja o zebranych pieniądzach powinna znajdować się na UI <+>
 
-- Dodanie prostego systemu punktów życia dla gracza. Informacja o posiadanych punktach życia powinna znajdować się na UI (bazowo gracz posiada 3 punkty życia) 
+- Dodanie prostego systemu punktów życia dla gracza. Informacja o posiadanych punktach życia powinna znajdować się na UI (bazowo gracz posiada 3 punkty życia) <+>
 
 - Implementacja prostego przeciwnika "grzyba" z punktami patrolowymi, który:  
 
@@ -20,9 +20,9 @@ Wymagania:
 
     3) Posiada 2 punkty życia. Jedno uderzenie gracza zabiera 1 punkty życia. Po utracie wszystkich punktów umiera 
 
-    4) Jeżeli gracz wejdzie w przeciwnika to otrzymuje 1 punkty obrażeń i zostaje odepchnięty w przeciwnym kierunku do przeciwnika
+    4) Jeżeli gracz wejdzie w przeciwnika to otrzymuje 1 punkty obrażeń i zostaje odepchnięty w przeciwnym kierunku do przeciwnika <+>
 
-- Po utraceniu wszystkich punktów życia gracz umiera i nie można nim kontrolować 
+- Po utraceniu wszystkich punktów życia gracz umiera i nie można nim kontrolować <+>
 
 - Animacje zmieniają się w zależności od stanu postaci <+> 
 

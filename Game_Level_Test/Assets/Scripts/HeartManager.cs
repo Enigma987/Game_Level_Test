@@ -1,22 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class CoinsManager : MonoBehaviour
+public class HeartManager : MonoBehaviour
 {
-    public GameObject player;
-    
-    public GameObject coin;
+    public GameObject lifeManager;
+
     Animator animator;
-    public Text numberOfCoin;
 
     public bool isCollect;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = coin.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,11 +21,10 @@ public class CoinsManager : MonoBehaviour
     {
         if (isCollect)
         {
-            player.GetComponent<CharacterManager>().Coins++;
-            numberOfCoin.text = player.GetComponent<CharacterManager>().Coins.ToString();
+            lifeManager.GetComponent<LifeManager>().AddHeart();
 
-            animator.SetTrigger("isCollect");
-            Destroy(coin.GetComponent<BoxCollider2D>());
+            animator.SetTrigger("collect");
+            Destroy(GetComponent<BoxCollider2D>());
             isCollect = false;
         }
     }
