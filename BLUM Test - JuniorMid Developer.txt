@@ -2,7 +2,7 @@
 Zadanie polega na przygotowaniu projektu platformowej gry 2D w Unity (2019+) z pomocą otrzymanych materiałów (załączonego pliku w formacie .UnityPackage). Ilość pikseli na jednostkę wynosi 16x16. 
 
 
-Wymagania: 
+Wymagania: <+>
 
 - Podstawowy ruch postaci - ruch lewo/prawo, skok, opadanie <+>
 
@@ -18,7 +18,7 @@ Wymagania:
 
     2) Jeżeli posiada zdefiniowane punkty patrolu to porusza się między nimi. <+>
 
-    3) Posiada 2 punkty życia. Jedno uderzenie gracza zabiera 1 punkty życia. Po utracie wszystkich punktów umiera 
+    3) Posiada 2 punkty życia. Jedno uderzenie gracza zabiera 1 punkty życia. Po utracie wszystkich punktów umiera <+>
 
     4) Jeżeli gracz wejdzie w przeciwnika to otrzymuje 1 punkty obrażeń i zostaje odepchnięty w przeciwnym kierunku do przeciwnika <+>
 

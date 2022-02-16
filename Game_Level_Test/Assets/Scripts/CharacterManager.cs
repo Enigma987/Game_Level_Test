@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class CharacterManager : MonoBehaviour
 {
-    CharacterController2d controller;
+    MovementController controller;
     Animator animator2d;
-    Rigidbody2D rigidbody2d;
 
     private bool canMove;
     public bool CanMove
@@ -15,13 +14,12 @@ public class CharacterManager : MonoBehaviour
         set { canMove = value; }
     }
 
-    public float horizontalMove = 0f;
+    private float horizontalMove = 0f;
 
     public float moveSpeed;
 
-    public bool jump;
+    private bool jump;
 
-    private int coins;
 
     private bool enemyHit;
     public bool EnemyHit
@@ -29,12 +27,13 @@ public class CharacterManager : MonoBehaviour
         get { return enemyHit; }
         set { enemyHit = value; }
     }
+
+    private int coins;
     public int Coins
     {
         get { return coins; }
         set { coins = value; }
     }
-
 
     private int hearts;
     public int Hearts
@@ -46,9 +45,8 @@ public class CharacterManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        controller = GetComponent<CharacterController2d>();
+        controller = GetComponent<MovementController>();
         animator2d = GetComponent<Animator>();
-        rigidbody2d = GetComponent<Rigidbody2D>();
         coins = 0;
         hearts = 3;
         canMove = true;
@@ -79,7 +77,7 @@ public class CharacterManager : MonoBehaviour
                 animator2d.SetTrigger("attackTrigger");
                 if(enemyHit)
                 {
-                    GetComponentInChildren<SwordScript>().Enemy.GetComponent<MushroomScript>().Hit();
+                    GetComponentInChildren<SwordScript>().Enemy.GetComponent<MushroomScript>().GetHit();
                 }
             }
         }

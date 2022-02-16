@@ -6,17 +6,15 @@ using UnityEngine.UI;
 public class CoinsManager : MonoBehaviour
 {
     public GameObject player;
-    
-    public GameObject coin;
-    Animator animator;
     public Text numberOfCoin;
 
-    public bool isCollect;
+    Animator animator;
+    private bool isCollect;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = coin.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,7 +26,7 @@ public class CoinsManager : MonoBehaviour
             numberOfCoin.text = player.GetComponent<CharacterManager>().Coins.ToString();
 
             animator.SetTrigger("isCollect");
-            Destroy(coin.GetComponent<BoxCollider2D>());
+            Destroy(GetComponent<BoxCollider2D>());
             isCollect = false;
         }
     }

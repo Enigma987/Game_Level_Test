@@ -11,7 +11,7 @@ public class LifeManager : MonoBehaviour
     CharacterManager characterManager;
     public List<Image> heartsImages;
 
-    public int numberOfHearts;
+    private int numberOfHearts;
 
 
     // Start is called before the first frame update
@@ -36,19 +36,17 @@ public class LifeManager : MonoBehaviour
             heartsImages[i].gameObject.SetActive(true); 
     }
 
-    public void LostHeart(float forcedPlayer)
+    public void LostHeart()
     {
-        if (characterManager.Hearts > 0)
+        if (characterManager.Hearts > 1)
             characterManager.Hearts--;
         else
         {
             endGameCanvas.SetActive(true);
             player.GetComponent<Animator>().SetTrigger("isDie");
+            Destroy(player.GetComponent<CircleCollider2D>());
             characterManager.CanMove = false;
         }
-
-        player.GetComponent<Animator>().SetTrigger("getHit");
-        player.GetComponent<CharacterController2d>().Move(forcedPlayer, false);
     }
 
     public void AddHeart()

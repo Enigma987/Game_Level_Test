@@ -8,7 +8,7 @@ public class HeartManager : MonoBehaviour
 
     Animator animator;
 
-    public bool isCollect;
+    private bool isCollect;
 
     // Start is called before the first frame update
     void Start()

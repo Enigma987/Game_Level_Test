@@ -4900,6 +4900,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509845779}
   m_CullTransparentMesh: 1
+--- !u!1 &511940597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 511940598}
+  m_Layer: 0
+  m_Name: Collect Object
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &511940598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511940597}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.8832293, y: -4.6811156, z: -0.03606817}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2100223163}
+  - {fileID: 1280636948}
+  - {fileID: 1201053124}
+  m_Father: {fileID: 1631166883}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4981,7 +5014,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &529829303
 GameObject:
@@ -5531,13 +5564,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816843511}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.572, y: -9.368, z: 0.428}
+  m_LocalPosition: {x: 0.10563564, y: -2.3463016, z: 0.30950177}
   m_LocalScale: {x: 7.012692, y: 7.012692, z: 7.012692}
   m_Children:
   - {fileID: 1657038328}
   - {fileID: 1164222612}
-  m_Father: {fileID: 1631166883}
-  m_RootOrder: 4
+  m_Father: {fileID: 1277142793}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &816843513
 Animator:
@@ -5669,21 +5702,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeManager: {fileID: 1626658939}
-  controller: {fileID: 816843518}
   player: {fileID: 2129924411}
-  animator: {fileID: 816843513}
-  rigidbody2d: {fileID: 816843515}
+  isStatic: 0
   points:
   - {fileID: 1007895874}
   - {fileID: 1958962328}
-  horizontalMove: 0
-  walkRight: 0
-  hitPlayer: 0
-  heartsNumber: 2
   hearstObject:
   - {fileID: 1657038327}
   - {fileID: 1164222611}
-  dead: 0
 --- !u!114 &816843518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5730,7 +5756,7 @@ GameObject:
   - component: {fileID: 948117651}
   - component: {fileID: 948117652}
   m_Layer: 9
-  m_Name: hearts_hud (3)
+  m_Name: second Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5825,11 +5851,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007895874}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.610358, y: -9.368, z: 0.4280073}
+  m_LocalPosition: {x: -5.076722, y: -2.3463016, z: 0.30950907}
   m_LocalScale: {x: 7.012692, y: 7.012692, z: 7.012692}
   m_Children: []
-  m_Father: {fileID: 1631166883}
-  m_RootOrder: 5
+  m_Father: {fileID: 1277142793}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1024003000
 GameObject:
@@ -6024,7 +6050,7 @@ GameObject:
   - component: {fileID: 1164222612}
   - component: {fileID: 1164222613}
   m_Layer: 9
-  m_Name: hearts_hud (1)
+  m_Name: second Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6184,7 +6210,7 @@ GameObject:
   - component: {fileID: 1201053125}
   - component: {fileID: 1201053126}
   m_Layer: 9
-  m_Name: hearts_hud
+  m_Name: Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6268,11 +6294,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201053121}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.569642, y: -8.693915, z: 0.4280073}
+  m_LocalPosition: {x: 8.452871, y: -4.0127997, z: 0.46407548}
   m_LocalScale: {x: 6.7491374, y: 6.7491374, z: 6.7491374}
   m_Children: []
-  m_Father: {fileID: 1631166883}
-  m_RootOrder: 10
+  m_Father: {fileID: 511940598}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1201053125
 BoxCollider2D:
@@ -6313,7 +6339,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeManager: {fileID: 1626658939}
-  isCollect: 0
 --- !u!1 &1218880038
 GameObject:
   m_ObjectHideFlags: 0
@@ -6396,6 +6421,40 @@ Transform:
   m_Father: {fileID: 1631166883}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1277142792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1277142793}
+  m_Layer: 0
+  m_Name: Mushrooms
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1277142793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277142792}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4663644, y: -7.0216985, z: 0.118498236}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 816843512}
+  - {fileID: 1007895875}
+  - {fileID: 1958962329}
+  - {fileID: 1617924268}
+  m_Father: {fileID: 1631166883}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280636947
 GameObject:
   m_ObjectHideFlags: 0
@@ -6410,7 +6469,7 @@ GameObject:
   - component: {fileID: 1280636951}
   - component: {fileID: 1280636952}
   m_Layer: 9
-  m_Name: Coin (1)
+  m_Name: Coin 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6423,12 +6482,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280636947}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.29, y: -2.52, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.173229, y: 2.1611156, z: 0.03606817}
   m_LocalScale: {x: 11.097899, y: 11.097899, z: 11.097899}
   m_Children: []
-  m_Father: {fileID: 1631166883}
-  m_RootOrder: 9
+  m_Father: {fileID: 511940598}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1280636949
 SpriteRenderer:
@@ -6513,9 +6572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2129924411}
-  coin: {fileID: 1280636947}
   numberOfCoin: {fileID: 55787830}
-  isCollect: 0
 --- !u!61 &1280636952
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6974,7 +7031,6 @@ MonoBehaviour:
   - {fileID: 699134940}
   - {fileID: 1456272347}
   - {fileID: 709225673}
-  numberOfHearts: 0
 --- !u!1 &1617924267
 GameObject:
   m_ObjectHideFlags: 0
@@ -6988,7 +7044,6 @@ GameObject:
   - component: {fileID: 1617924273}
   - component: {fileID: 1617924272}
   - component: {fileID: 1617924271}
-  - component: {fileID: 1617924270}
   - component: {fileID: 1617924269}
   - component: {fileID: 1617924275}
   m_Layer: 8
@@ -7006,13 +7061,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617924267}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.071, y: -6.362, z: 0.428}
+  m_LocalPosition: {x: 2.6046357, y: 0.6596985, z: 0.30950177}
   m_LocalScale: {x: 7.012692, y: 7.012692, z: 7.012692}
   m_Children:
   - {fileID: 2091381336}
   - {fileID: 948117651}
-  m_Father: {fileID: 1631166883}
-  m_RootOrder: 7
+  m_Father: {fileID: 1277142793}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1617924269
 MonoBehaviour:
@@ -7027,38 +7082,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeManager: {fileID: 1626658939}
-  controller: {fileID: 1617924270}
   player: {fileID: 2129924411}
-  animator: {fileID: 1617924271}
-  rigidbody2d: {fileID: 1617924273}
+  isStatic: 1
   points: []
-  horizontalMove: 0
-  walkRight: 0
-  hitPlayer: 0
-  heartsNumber: 2
   hearstObject:
   - {fileID: 2091381335}
   - {fileID: 948117650}
-  dead: 0
---- !u!114 &1617924270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1617924267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38a7f32ffb4a5b849a51ef2923f70c86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 400
-  movementSmooth: 0.05
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 128
-  groundCheck: {fileID: 1007895875}
-  airControl: 1
 --- !u!95 &1617924271
 Animator:
   serializedVersion: 3
@@ -7230,7 +7259,6 @@ MonoBehaviour:
   - {fileID: 699134940}
   - {fileID: 1456272347}
   - {fileID: 709225673}
-  numberOfHearts: 0
 --- !u!4 &1626658941
 Transform:
   m_ObjectHideFlags: 0
@@ -7243,7 +7271,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1631166882
 GameObject:
@@ -7276,13 +7304,8 @@ Transform:
   - {fileID: 1218880040}
   - {fileID: 1058029941}
   - {fileID: 2129924412}
-  - {fileID: 816843512}
-  - {fileID: 1007895875}
-  - {fileID: 1958962329}
-  - {fileID: 1617924268}
-  - {fileID: 2100223163}
-  - {fileID: 1280636948}
-  - {fileID: 1201053124}
+  - {fileID: 1277142793}
+  - {fileID: 511940598}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7297,7 +7320,7 @@ GameObject:
   - component: {fileID: 1657038328}
   - component: {fileID: 1657038329}
   m_Layer: 9
-  m_Name: hearts_hud
+  m_Name: first Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7576,11 +7599,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958962328}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.569642, y: -9.368, z: 0.4280073}
+  m_LocalPosition: {x: 4.1032777, y: -2.3463016, z: 0.30950907}
   m_LocalScale: {x: 7.012692, y: 7.012692, z: 7.012692}
   m_Children: []
-  m_Father: {fileID: 1631166883}
-  m_RootOrder: 6
+  m_Father: {fileID: 1277142793}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1986773148
 GameObject:
@@ -7668,7 +7691,7 @@ GameObject:
   - component: {fileID: 2091381336}
   - component: {fileID: 2091381337}
   m_Layer: 9
-  m_Name: hearts_hud (2)
+  m_Name: first Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7753,7 +7776,7 @@ GameObject:
   - component: {fileID: 2100223167}
   - component: {fileID: 2100223166}
   m_Layer: 9
-  m_Name: Coin
+  m_Name: Coin 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7766,12 +7789,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100223162}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.92, y: -2.601, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.036771, y: 2.0801156, z: 0.03606817}
   m_LocalScale: {x: 11.097899, y: 11.097899, z: 11.097899}
   m_Children: []
-  m_Father: {fileID: 1631166883}
-  m_RootOrder: 8
+  m_Father: {fileID: 511940598}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2100223164
 Animator:
@@ -7882,9 +7905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2129924411}
-  coin: {fileID: 2100223162}
   numberOfCoin: {fileID: 55787830}
-  isCollect: 0
 --- !u!1 &2129924411
 GameObject:
   m_ObjectHideFlags: 0
@@ -8045,9 +8066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314bc9d124c255545af1e7384a502ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalMove: 0
   moveSpeed: 20
-  jump: 0
 --- !u!58 &2129924419
 CircleCollider2D:
   m_ObjectHideFlags: 0
