@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MushroomScript : EnemyManager
+public class GoblinScript : EnemyManager
 {
     public GameObject player;
     public GameObject lifeManager;
@@ -14,9 +14,10 @@ public class MushroomScript : EnemyManager
 
     public List<GameObject> heartsObject;
 
-    public MushroomScript(Enemy _enemy, GameObject _lifeManager, GameObject _player) : base(_enemy, _lifeManager, _player)
+    public GoblinScript(Enemy _enemy, GameObject _lifeManager, GameObject _player) : base(_enemy, _lifeManager, _player)
     {
     }
+
 
     // Start is called before the first frame update
     void Start()

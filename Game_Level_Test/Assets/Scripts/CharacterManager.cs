@@ -20,14 +20,6 @@ public class CharacterManager : MonoBehaviour
 
     private bool jump;
 
-
-    private bool enemyHit;
-    public bool EnemyHit
-    {
-        get { return enemyHit; }
-        set { enemyHit = value; }
-    }
-
     private int coins;
     public int Coins
     {
@@ -67,18 +59,12 @@ public class CharacterManager : MonoBehaviour
             animator2d.SetFloat("moveX", horizontalMove);
 
             if (Input.GetButtonDown("Jump"))
-            {
                 jump = true;
-            }
-
 
             if (Input.GetKeyDown(KeyCode.F))
             {
                 animator2d.SetTrigger("attackTrigger");
-                if(enemyHit)
-                {
-                    GetComponentInChildren<SwordScript>().Enemy.GetComponent<MushroomScript>().GetHit();
-                }
+                GetComponentInChildren<SwordScript>().EnemyHit();
             }
         }
     }

@@ -11,18 +11,47 @@ public class SwordScript : MonoBehaviour
         set { enemy = value; }
     }
 
+    private bool hit;
+
+    private string enemyType;
+
+    public void EnemyHit()
+    {
+        if (hit)
+        {
+            switch (enemyType)
+            {
+                case "Mushroom":
+                    Enemy.GetComponent<MushroomScript>().Hit();
+                    break;
+                case "Goblin":
+                    Enemy.GetComponent<GoblinScript>().Hit();
+                    break;
+            }
+        }
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.tag == "Mushroom")
         {
-            GetComponentInParent<CharacterManager>().EnemyHit = true;
+            hit = true;
             enemy = collision.gameObject;
+            enemyType = "Mushroom";
+        }
+
+        if (collision.tag == "Goblin")
+        {
+            hit = true;
+            enemy = collision.gameObject;
+            enemyType = "Goblin";
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        GetComponentInParent<CharacterManager>().EnemyHit = false;
+        hit = false;
         enemy = null;
     }
 }
