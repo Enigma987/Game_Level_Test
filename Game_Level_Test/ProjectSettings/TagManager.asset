@@ -20,7 +20,7 @@ TagManager:
   - Ground
   - Enemies
   - Coins
-  - 
+  - Trap
   - 
   - 
   - 
@@ -48,6 +48,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 2130226763
+    locked: 0
+  - name: Trap
+    uniqueID: 687033011
     locked: 0
   - name: Ground
     uniqueID: 4055579097

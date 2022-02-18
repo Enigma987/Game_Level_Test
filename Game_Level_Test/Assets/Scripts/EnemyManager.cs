@@ -46,9 +46,9 @@ public class EnemyManager : MonoBehaviour
     {
         player.GetComponent<Animator>().SetTrigger("getHit");
         if (player.gameObject.transform.position.x <= enemy.EnemyObject.transform.position.x)
-            player.GetComponent<MovementController>().Move(-30, false);
+            player.GetComponent<MovementController>().Move(-30, false, false);
         else
-            player.GetComponent<MovementController>().Move(30, false);
+            player.GetComponent<MovementController>().Move(30, false, false);
 
         lifeManager.GetComponent<LifeManager>().LostHeart();
     }

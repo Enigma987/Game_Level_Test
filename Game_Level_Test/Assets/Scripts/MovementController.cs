@@ -38,20 +38,23 @@ public class MovementController : MonoBehaviour
 	}
 
 
-	public void Move(float move, bool jump)
+	public void Move(float move, bool jump, bool isPLatform)
 	{
 		if (isOnGround || airControl)
 		{
 			Vector3 targetVelocity = new Vector2(move * 10f, rigidbody2d.velocity.y);
 			rigidbody2d.velocity = Vector3.SmoothDamp(rigidbody2d.velocity, targetVelocity, ref m_Velocity, movementSmooth);
 
-			if (move > 0 && !facingRight)
+			if (!isPLatform)
 			{
-				Flip();
-			}
-			else if (move < 0 && facingRight)
-			{
-				Flip();
+				if (move > 0 && !facingRight)
+				{
+					Flip();
+				}
+				else if (move < 0 && facingRight)
+				{
+					Flip();
+				}
 			}
 		}
 

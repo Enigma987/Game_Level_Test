@@ -71,7 +71,7 @@ public class CharacterManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, jump, false);
         jump = false;
     }
 }
