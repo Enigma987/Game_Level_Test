@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoblinScript : EnemyManager
+public class BomberGoblinScript : EnemyManager
 {
+    public BomberGoblinScript(Enemy _enemy, GameObject _lifeManager, GameObject _player) : base(_enemy, _lifeManager, _player)
+    {
+    }
+
     public GameObject player;
     public GameObject lifeManager;
+    public GameObject bomb;
 
-    EnemyManager enemyManager;
+    public EnemyManager enemyManager;
 
-    public bool isStatic;
-    public GameObject[] points;
 
     public List<GameObject> heartsObject;
 
@@ -20,23 +23,23 @@ public class GoblinScript : EnemyManager
         set { useSpecial = value; }
     }
 
-    public GoblinScript(Enemy _enemy, GameObject _lifeManager, GameObject _player) : base(_enemy, _lifeManager, _player)
-    {
-    }
+
+    float fireRate;
+    float nextFire;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        enemyManager = new EnemyManager(new Enemy(this.gameObject, points, heartsObject, GetComponent<Animator>(), GetComponent<Rigidbody2D>()), lifeManager, player);
+        enemyManager = new EnemyManager(new Enemy(this.gameObject, null, heartsObject, GetComponent<Animator>(), GetComponent<Rigidbody2D>()), lifeManager, player);
+
+        fireRate = 1f;
+        nextFire = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isStatic)
-            enemyManager.Movement();
-
         if (hitPlayer)
         {
             enemyManager.HitThePlayer();
@@ -44,7 +47,10 @@ public class GoblinScript : EnemyManager
             hitPlayer = false;
         }
 
-        if(useSpecial)
+        if (Time.time > nextFire)
+            useSpecial = true;
+
+        if (useSpecial)
         {
             SpecialAttack();
             useSpecial = false;
@@ -56,12 +62,6 @@ public class GoblinScript : EnemyManager
         enemyManager.GetHit();
     }
 
-    private void FixedUpdate()
-    {
-        if (!isStatic)
-            GetComponent<MovementController>().Move(enemyManager.HorizonatlMove * Time.fixedDeltaTime, false);
-    }
-
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -71,7 +71,10 @@ public class GoblinScript : EnemyManager
     public override void SpecialAttack()
     {
         GetComponent<Animator>().SetTrigger("isAttack");
-        hitPlayer = true;
+
+        Instantiate(bomb, transform.position, Quaternion.identity);
+        nextFire = Time.time + fireRate;
+
         UseSpecial = false;
     }
 }

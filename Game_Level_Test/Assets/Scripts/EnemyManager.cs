@@ -67,4 +67,9 @@ public class EnemyManager : MonoBehaviour
             Destroy(enemy.EnemyObject.GetComponent<CircleCollider2D>());
         }
     }
+
+    public virtual void SpecialAttack()
+    {
+        Debug.Log("It is a special attack");
+    }
 }
