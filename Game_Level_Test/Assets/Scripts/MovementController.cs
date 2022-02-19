@@ -37,25 +37,33 @@ public class MovementController : MonoBehaviour
 				isOnGround = true;
 	}
 
+	public void PlatformMove(float move, string direction)
+	{
+		if (isOnGround || airControl)
+		{
+			Vector3 targetVelocity = Vector3.zero;
+			if (direction == "right")
+				targetVelocity = new Vector2(move * 10f, rigidbody2d.velocity.y);
+			if (direction == "up")
+				targetVelocity = new Vector2(rigidbody2d.velocity.x, move * 10f);
 
-	public void Move(float move, bool jump, bool isPLatform)
+			rigidbody2d.velocity = Vector3.SmoothDamp(rigidbody2d.velocity, targetVelocity, ref m_Velocity, movementSmooth);
+		}
+	}
+
+	public void Move(float move, bool jump)
 	{
 		if (isOnGround || airControl)
 		{
 			Vector3 targetVelocity = new Vector2(move * 10f, rigidbody2d.velocity.y);
+
+
 			rigidbody2d.velocity = Vector3.SmoothDamp(rigidbody2d.velocity, targetVelocity, ref m_Velocity, movementSmooth);
 
-			if (!isPLatform)
-			{
-				if (move > 0 && !facingRight)
-				{
-					Flip();
-				}
-				else if (move < 0 && facingRight)
-				{
-					Flip();
-				}
-			}
+			if (move > 0 && !facingRight)
+				Flip();
+			else if (move < 0 && facingRight)
+				Flip();
 		}
 
 		if (isOnGround && jump)

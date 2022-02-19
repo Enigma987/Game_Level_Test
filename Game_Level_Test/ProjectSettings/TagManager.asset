@@ -9,6 +9,7 @@ TagManager:
   - Goblin
   - Ground
   - Bomber Goblin
+  - Non Interectable Object
   layers:
   - Default
   - TransparentFX

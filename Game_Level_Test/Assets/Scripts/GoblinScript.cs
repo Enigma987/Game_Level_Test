@@ -59,7 +59,7 @@ public class GoblinScript : EnemyManager
     private void FixedUpdate()
     {
         if (!isStatic)
-            GetComponent<MovementController>().Move(enemyManager.HorizonatlMove * Time.fixedDeltaTime, false, false);
+            GetComponent<MovementController>().Move(enemyManager.HorizonatlMove * Time.fixedDeltaTime, false);
     }
 
     public void OnTriggerEnter2D(Collider2D other)

@@ -12,6 +12,8 @@ public class PlatformScript : MonoBehaviour
 
     float horizontalMove;
 
+    public bool isHorizontalMove;
+
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -25,16 +27,26 @@ public class PlatformScript : MonoBehaviour
         else
             horizontalMove = -10;
 
+        if (isHorizontalMove)
+        {
+            if (Mathf.RoundToInt(edges[1].transform.position.x) == Mathf.RoundToInt(points[1].transform.position.x))
+                walkRight = false;
 
-        if (Mathf.RoundToInt(edges[1].transform.position.x) == Mathf.RoundToInt(points[1].transform.position.x))
-            walkRight = false;
+            if (Mathf.RoundToInt(edges[0].transform.position.x) == Mathf.RoundToInt(points[0].transform.position.x))
+                walkRight = true;
+        }
+        else
+        {
+            if (Mathf.RoundToInt(edges[1].transform.position.y) == Mathf.RoundToInt(points[1].transform.position.y))
+                walkRight = false;
 
-        if (Mathf.RoundToInt(edges[0].transform.position.x) == Mathf.RoundToInt(points[0].transform.position.x))
-            walkRight = true;
+            if (Mathf.RoundToInt(edges[0].transform.position.y) == Mathf.RoundToInt(points[0].transform.position.y))
+                walkRight = true;
+        }
 
     }
     private void FixedUpdate()
     {
-        GetComponent<MovementController>().Move(horizontalMove * Time.fixedDeltaTime, false, true);
+        GetComponent<MovementController>().PlatformMove(horizontalMove * Time.fixedDeltaTime, "up");
     }
 }

@@ -11,6 +11,7 @@ public class EnemyManager : MonoBehaviour
     public float HorizonatlMove
     {
         get { return horizontalMove; }
+        set { horizontalMove = value; }
     }
 
     protected bool walkRight = true;
@@ -46,9 +47,9 @@ public class EnemyManager : MonoBehaviour
     {
         player.GetComponent<Animator>().SetTrigger("getHit");
         if (player.gameObject.transform.position.x <= enemy.EnemyObject.transform.position.x)
-            player.GetComponent<MovementController>().Move(-30, false, false);
+            player.GetComponent<MovementController>().Move(-30, false);
         else
-            player.GetComponent<MovementController>().Move(30, false, false);
+            player.GetComponent<MovementController>().Move(30, false);
 
         lifeManager.GetComponent<LifeManager>().LostHeart();
     }
