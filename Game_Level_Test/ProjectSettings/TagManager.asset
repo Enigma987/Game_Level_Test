@@ -10,6 +10,8 @@ TagManager:
   - Ground
   - Bomber Goblin
   - Non Interectable Object
+  - Red Block
+  - Green Block
   layers:
   - Default
   - TransparentFX

@@ -47,6 +47,10 @@ public class PlatformScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        GetComponent<MovementController>().PlatformMove(horizontalMove * Time.fixedDeltaTime, "up");
+        if(isHorizontalMove)
+            GetComponent<MovementController>().PlatformMove(horizontalMove * Time.fixedDeltaTime, "right");
+
+        if (!isHorizontalMove)
+            GetComponent<MovementController>().PlatformMove(horizontalMove * Time.fixedDeltaTime, "up");
     }
 }
