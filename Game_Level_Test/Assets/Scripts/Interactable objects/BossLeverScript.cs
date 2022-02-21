@@ -7,7 +7,15 @@ public class BossLeverScript : MonoBehaviour
     public GameObject bossPlatform;
     public GameObject boss;
 
+    Animator leverAnimator;
+
     bool canPull;
+
+
+    private void Start()
+    {
+        leverAnimator = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -17,6 +25,9 @@ public class BossLeverScript : MonoBehaviour
             bossPlatform.SetActive(false);
             boss.GetComponent<Animator>().SetTrigger("isDead");
             Destroy(boss.GetComponent<BomberGoblinScript>());
+
+            leverAnimator.SetTrigger("open");
+            Destroy(GetComponent<BoxCollider2D>());
         }
     }
 

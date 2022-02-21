@@ -7,30 +7,24 @@ public class SignScript : MonoBehaviour
 {
     public GameObject signCanvas;
     public Text text;
-    public bool canShow;
+    private bool canShow;
     public string textToShow;
 
-    // Update is called once per frame
-    void Update()
+    public void ShowMessage()
     {
-        if (canShow && Input.GetKeyDown(KeyCode.E))
-        {
-            signCanvas.SetActive(true);
-            text.text = textToShow;
-        }
-
-        if(!canShow)
-            signCanvas.SetActive(false);
+        signCanvas.SetActive(true);
+        text.text = textToShow;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
-            canShow = true;
+            ShowMessage();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        canShow = false;
+        if (collision.tag == "Player")
+            signCanvas.SetActive(false);
     }
 }

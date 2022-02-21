@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    GameObject lifeManager;
-    GameObject player;
+    GameObject lifeManagerObj;
+    GameObject playerObj;
 
     protected float horizontalMove;
     public float HorizonatlMove
@@ -22,8 +22,8 @@ public class EnemyManager : MonoBehaviour
     public EnemyManager(Enemy _enemy, GameObject _lifeManager, GameObject _player)
     {
         enemy = _enemy;
-        lifeManager = _lifeManager;
-        player = _player;
+        lifeManagerObj = _lifeManager;
+        playerObj = _player;
     }
 
     public void Movement()
@@ -45,13 +45,13 @@ public class EnemyManager : MonoBehaviour
 
     public void HitThePlayer()
     {
-        player.GetComponent<Animator>().SetTrigger("getHit");
-        if (player.gameObject.transform.position.x <= enemy.EnemyObject.transform.position.x)
-            player.GetComponent<MovementController>().Move(-30, false);
+        playerObj.GetComponent<Animator>().SetTrigger("getHit");
+        if (playerObj.gameObject.transform.position.x <= enemy.EnemyObject.transform.position.x)
+            playerObj.GetComponent<MovementController>().Move(-30, false);
         else
-            player.GetComponent<MovementController>().Move(30, false);
+            playerObj.GetComponent<MovementController>().Move(30, false);
 
-        lifeManager.GetComponent<LifeManager>().LostHeart();
+        lifeManagerObj.GetComponent<LifeManager>().LostHeart();
     }
 
     public void GetHit()
