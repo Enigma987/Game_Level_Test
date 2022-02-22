@@ -7,17 +7,11 @@ public class PlatformScript : MonoBehaviour
     public GameObject[] points;
     public GameObject[] edges;
 
-    Rigidbody2D rigidbody;
     public bool walkRight = true;
 
     float horizontalMove;
 
     public bool isHorizontalMove;
-
-    private void Start()
-    {
-        rigidbody = GetComponent<Rigidbody2D>();
-    }
 
     // Update is called once per frame
     void Update()

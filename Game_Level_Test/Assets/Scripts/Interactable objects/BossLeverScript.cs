@@ -20,14 +20,18 @@ public class BossLeverScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canPull && Input.GetKeyDown(KeyCode.E))
+        if (canPull && Input.GetKeyDown(KeyCode.E))
         {
             bossPlatform.SetActive(false);
+
             boss.GetComponent<Animator>().SetTrigger("isDead");
             Destroy(boss.GetComponent<BomberGoblinScript>());
 
             leverAnimator.SetTrigger("open");
             Destroy(GetComponent<BoxCollider2D>());
+
+
+            GetComponent<EndGameScript>().Display();
         }
     }
 
